@@ -1,4 +1,4 @@
-package com.murerwa.rickandmortycompose.presentation.activity
+package com.murerwa.rickandmortycompose.presentation.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
