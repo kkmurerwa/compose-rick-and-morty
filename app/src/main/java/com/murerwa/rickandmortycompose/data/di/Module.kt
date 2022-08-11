@@ -5,6 +5,7 @@ import com.murerwa.rickandmortycompose.data.network.ApiClient
 import com.murerwa.rickandmortycompose.data.network.Urls
 import com.murerwa.rickandmortycompose.data.repositories.CharactersRepositoryImpl
 import com.murerwa.rickandmortycompose.domain.repositories.CharactersRepository
+import com.murerwa.rickandmortycompose.presentation.di.presentationModules
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.BuildConfig
@@ -54,5 +55,6 @@ val apiModules: Module = module {
 val dataModules: List<Module> = listOf(
     repositoryModules,
     networkingModules,
+    presentationModules,
     apiModules,
 )

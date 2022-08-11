@@ -1,4 +1,4 @@
-package com.murerwa.rickandmortycompose.presentation.components.common
+package com.murerwa.rickandmortycompose.presentation.common
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton

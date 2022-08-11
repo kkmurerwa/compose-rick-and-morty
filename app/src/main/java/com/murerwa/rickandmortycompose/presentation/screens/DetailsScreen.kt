@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.murerwa.rickandmortycompose.presentation.components.common.CustomTopAppBar
+import com.murerwa.rickandmortycompose.presentation.common.CustomTopAppBar
 
 @Composable
 fun DetailScreen(

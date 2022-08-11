@@ -67,6 +67,7 @@ dependencies {
     implementation("com.jakewharton.timber:timber:5.0.1")
 
     // Koin
+    implementation("io.insert-koin:koin-android:3.2.0")
     implementation("io.insert-koin:koin-androidx-compose:3.2.0")
 
     // Retrofit
@@ -79,4 +80,7 @@ dependencies {
     // Gson
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.1.0")
 }

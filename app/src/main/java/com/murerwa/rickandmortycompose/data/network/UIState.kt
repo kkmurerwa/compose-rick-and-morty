@@ -8,3 +8,9 @@ sealed class UIState<out T> {
     ) : UIState<Nothing>()
     object Loading : UIState<Nothing>()
 }
+
+//data class UIState(
+//    val isLoading: Boolean = false,
+//    val data: Any? = null,
+//    val error: String = ""
+//)
