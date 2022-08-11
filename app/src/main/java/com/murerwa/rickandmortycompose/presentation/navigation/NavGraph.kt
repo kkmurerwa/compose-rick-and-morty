@@ -1,11 +1,11 @@
-package com.murerwa.rickandmortycompose.ui.navigation
+package com.murerwa.rickandmortycompose.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.murerwa.rickandmortycompose.ui.screens.DetailScreen
-import com.murerwa.rickandmortycompose.ui.screens.HomeScreen
+import com.murerwa.rickandmortycompose.presentation.screens.DetailScreen
+import com.murerwa.rickandmortycompose.presentation.screens.HomeScreen
 
 @Composable
 fun SetUpNavGraph(

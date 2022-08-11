@@ -1,4 +1,4 @@
-package com.murerwa.rickandmortycompose.ui.screens
+package com.murerwa.rickandmortycompose.presentation.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.murerwa.rickandmortycompose.ui.components.common.CustomTopAppBar
+import com.murerwa.rickandmortycompose.presentation.components.common.CustomTopAppBar
 
 @Composable
 fun DetailScreen(

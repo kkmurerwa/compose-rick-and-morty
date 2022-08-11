@@ -1,4 +1,4 @@
-package com.murerwa.rickandmortycompose.ui.theme
+package com.murerwa.rickandmortycompose.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

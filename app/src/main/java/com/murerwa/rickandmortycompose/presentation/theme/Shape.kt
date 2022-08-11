@@ -1,4 +1,4 @@
-package com.murerwa.rickandmortycompose.ui.theme
+package com.murerwa.rickandmortycompose.presentation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
