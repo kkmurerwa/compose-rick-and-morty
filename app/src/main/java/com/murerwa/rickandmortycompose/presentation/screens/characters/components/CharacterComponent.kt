@@ -1,9 +1,13 @@
 package com.murerwa.rickandmortycompose.presentation.screens.characters.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,8 +33,11 @@ fun CharacterComponent(
     character: CharacterItem?,
     onClick: (CharacterItem) -> Unit
 ) {
-    Box(
+    Card(
+        elevation = 0.dp,
         modifier = Modifier.fillMaxWidth()
+            .padding(top = 8.dp, bottom = 2.dp, start = 8.dp, end = 8.dp),
+        shape = RoundedCornerShape(8.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth()

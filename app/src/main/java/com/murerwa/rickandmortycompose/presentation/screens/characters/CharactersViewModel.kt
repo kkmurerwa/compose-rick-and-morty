@@ -23,48 +23,6 @@ class CharactersViewModel(
         getCharacters()
     }
 
-//    private fun getCharacters() {
-//        viewModelScope.launch {
-//            _charactersResponse.value = UIState()
-//
-//            when (val response = repository.getCharacters(page = 1)) {
-//                is NetworkResult.Success -> {
-//                    _charactersResponse.value = UIState(
-//                        isLoading = false,
-//                        error = "",
-//                        data = response.value
-//                    )
-//                }
-//                is NetworkResult.Failure -> {
-//                    if (response.isNetworkError) {
-//                        _charactersResponse.value =
-//                            UIState(
-//                                error = "Network error",
-//                            )
-//                    } else {
-//                        if (response.errorBody != null) {
-//                            Timber.d("Response is Not Null")
-//                            val error = response.errorBody.readError()
-//                            if (!error.isNullOrEmpty()) {
-//                                _charactersResponse.value = UIState(
-//                                    error = error
-//                                )
-//                            } else {
-//                                _charactersResponse.value =
-//                                    UIState(error = "Error fetching characters")
-//                            }
-//
-//                        } else {
-//                            Timber.d("Response is Null")
-//                            _charactersResponse.value =
-//                                UIState(error = "Error fetching characters")
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-
      private fun getCharacters() {
         viewModelScope.launch {
             _charactersResponse.value = UIState.Loading
@@ -89,6 +47,44 @@ class CharactersViewModel(
                         } else {
                             Timber.d("Response is Null")
                             _charactersResponse.value = UIState.Error("Error fetching characters")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    fun loadMoreCharacters(previousPage: Int) {
+
+        val nextPage = previousPage + 1
+
+        viewModelScope.launch {
+
+            when (val response = repository.getCharacters(page = nextPage)) {
+                is NetworkResult.Success -> {
+                    _charactersResponse.value.let {
+                        if (it is UIState.Success) {
+                            _charactersResponse.value =
+                                UIState.Success(
+                                    it.value.copy(results = it.value.results + response.value.results),
+                                    currentPage = nextPage,
+                                    isRefreshing = false
+                                )
+                        }
+                    }
+                }
+                is NetworkResult.Failure -> {
+                    _charactersResponse.value.let {
+                        if (it is UIState.Success) {
+                            _charactersResponse.value =
+                                UIState.Success(
+                                    it.value.copy(
+                                        results = it.value.results,
+                                    ),
+                                    isLoadingMoreError = "Could not load more items",
+                                    currentPage = nextPage,
+                                    isRefreshing = false
+                                )
                         }
                     }
                 }
