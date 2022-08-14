@@ -1,5 +1,9 @@
 package com.murerwa.rickandmortycompose.domain.models.characters
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class CharacterItem(
     val created: String,
     val episode: List<String>,
@@ -13,4 +17,4 @@ data class CharacterItem(
     val status: String,
     val type: String,
     val url: String
-)
+): Parcelable

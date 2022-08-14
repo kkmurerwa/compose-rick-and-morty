@@ -16,9 +16,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.murerwa.rickandmortycompose.data.network.UIState
 import com.murerwa.rickandmortycompose.presentation.common.ErrorScreen
-import com.murerwa.rickandmortycompose.presentation.viewmodels.CharactersViewModel
 import org.koin.androidx.compose.getViewModel
 import com.murerwa.rickandmortycompose.R
+import com.murerwa.rickandmortycompose.presentation.navigation.Screen
 import com.murerwa.rickandmortycompose.presentation.screens.characters.components.CharacterComponent
 
 @Composable
@@ -61,7 +61,12 @@ fun HomeScreen(
                             val character = characters.results[item]
 
                             CharacterComponent(
-                                character = character
+                                character = character,
+                                onClick = {
+                                    navController.navigate(
+                                        route = Screen.Detail.passCharacter(character)
+                                    )
+                                }
                             )
                         }
                     }

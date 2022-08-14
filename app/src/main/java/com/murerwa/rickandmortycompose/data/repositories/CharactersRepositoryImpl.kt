@@ -9,9 +9,13 @@ import com.murerwa.rickandmortycompose.domain.repositories.CharactersRepository
 
 class CharactersRepositoryImpl(
     private val apiClient: ApiClient
-): BaseRepository(), CharactersRepository {
+): CharactersRepository, BaseRepository() {
     override suspend fun getCharacters(page: Int): NetworkResult<CharactersResponse> {
         return safeApiCall { apiClient.getCharacters(page) }
+    }
+
+    override suspend fun getCharacterDetails(characterId: Int): NetworkResult<CharacterItem> {
+        return safeApiCall { apiClient.getCharacterDetails(characterId) }
     }
 
 }

@@ -1,5 +1,6 @@
 package com.murerwa.rickandmortycompose.presentation.screens.characters.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
@@ -19,14 +20,18 @@ import com.murerwa.rickandmortycompose.domain.models.characters.CharacterItem
 
 @Composable
 fun CharacterComponent(
-    character: CharacterItem?
+    character: CharacterItem?,
+    onClick: (CharacterItem) -> Unit
 ) {
     Box(
         modifier = Modifier.fillMaxWidth()
     ) {
         Row(
             modifier = Modifier.fillMaxWidth()
-                .padding(all = 10.dp),
+                .padding(all = 10.dp)
+                .clickable {
+                    onClick(character!!)
+                },
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             AsyncImage(
@@ -58,5 +63,5 @@ fun CharacterComponent(
 @Composable
 @Preview(showBackground = true)
 fun CharacterComponentPreview() {
-    CharacterComponent(null)
+    CharacterComponent(null) { }
 }

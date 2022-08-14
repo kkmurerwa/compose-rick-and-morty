@@ -1,4 +1,4 @@
-package com.murerwa.rickandmortycompose.presentation.viewmodels
+package com.murerwa.rickandmortycompose.presentation.screens.characters
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -9,8 +9,6 @@ import com.murerwa.rickandmortycompose.data.network.UIState
 import com.murerwa.rickandmortycompose.domain.models.characters.CharactersResponse
 import com.murerwa.rickandmortycompose.domain.repositories.CharactersRepository
 import com.murerwa.rickandmortycompose.presentation.readError
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
